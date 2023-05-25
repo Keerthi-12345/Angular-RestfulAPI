@@ -1,0 +1,43 @@
+<div class=" border border-class">
+    <h2 class="h2-class">Response List</h2>
+</div>
+
+
+
+<div>
+
+
+    <mat-table class="api-table mat-elevation-z8" [dataSource]="backendResponse" matSort>
+
+
+        <ng-container matColumnDef="url">
+            <mat-header-cell *matHeaderCellDef>URL</mat-header-cell>
+            <mat-cell *matCellDef="let api ">{{api.url}}</mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef>STATUS</mat-header-cell>
+            <mat-cell *matCellDef="let api ">{{api.statusCode}}</mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef>DATE</mat-header-cell>
+            <mat-cell *matCellDef="let api ">{{api.date}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+            <mat-header-cell *matHeaderCellDef>DURATION</mat-header-cell>
+            <mat-cell *matCellDef="let api ">{{api.duration}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+
+
+    </mat-table>
+
+
+</div>
